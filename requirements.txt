@@ -1,2 +1,1 @@
 matplotlib
-mpl_toolkits
