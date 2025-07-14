@@ -51,7 +51,7 @@ def plot_cone(R, r, H, h):
     X = R_mesh * np.cos(Theta)
     Y = R_mesh * np.sin(Theta)
 
-    ax.plot_surface(X, Y, Z, alpha=0.1, color='grey', edgecolor='k')
+    ax.plot_surface(X, Y, Z, alpha=0.1, color='grey', edgecolor='k',linewidth=.5)
     ax.set_zlim(0,H+50)
     ax.set_box_aspect([1.0, 1.0, 1.0])
 
@@ -65,7 +65,7 @@ def plot_cone(R, r, H, h):
     X_w = R_w * np.cos(Theta_w)
     Y_w = R_w * np.sin(Theta_w)
 
-    ax.plot_surface(X_w, Y_w, Z_w, alpha=0.6, color='blue', edgecolor='k')
+    ax.plot_surface(X_w, Y_w, Z_w, alpha=0.6, color='blue', edgecolor=None)
 
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
@@ -82,9 +82,9 @@ R=st.number_input("Top Radius R (cm)",value=150.0)
 # R = st.slider("Top Radius R (m)", min_value=1.0, max_value=5.0, value=2.0)
 r=st.number_input("Bottom Radius r (cm)",value=15.0)
 # r = st.slider("Bottom Radius r (m)", min_value=0.1, max_value=R, value=0.15)
-H=st.number_input("Total Height H (cm)",value=200.0)
+H=st.number_input("Total Height H (cm)",value=100.0)
 # H = st.slider("Total Height (H)", min_value=1.0, max_value=5.0, value=2.0)
-h = st.slider("Water Height h (cm)", min_value=0.0, max_value=H, value=100.0,step=0.5)
+h = st.slider("Water Height h (cm)", min_value=0.0, max_value=H, value=60.0,step=0.5)
 
 volume = calculate_volume(R, r, H, h)
 st.write(f"### Volume of liquid at height {h} cm is: {volume/1000:.2f} Liters")
