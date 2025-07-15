@@ -78,11 +78,11 @@ def plot_cone(R, r, H, h):
 
 # Streamlit UI
 st.header("Slurry Tank Volume Calculator",divider=True)
-R=st.number_input("Top Radius R (cm)",value=150.0)
+R=st.number_input("Top Radius R (cm)",value=60.0)
 # R = st.slider("Top Radius R (m)", min_value=1.0, max_value=5.0, value=2.0)
-r=st.number_input("Bottom Radius r (cm)",value=15.0)
+r=st.number_input("Bottom Radius r (cm)",value=10.0)
 # r = st.slider("Bottom Radius r (m)", min_value=0.1, max_value=R, value=0.15)
-H=st.number_input("Total Height H (cm)",value=100.0)
+H=st.number_input("Total Height H (cm)",value=140.0)
 # H = st.slider("Total Height (H)", min_value=1.0, max_value=5.0, value=2.0)
 h = st.slider("Water Height h (cm)", min_value=0.0, max_value=H, value=60.0,step=0.5)
 
